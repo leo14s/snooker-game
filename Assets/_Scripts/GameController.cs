@@ -18,16 +18,21 @@ public class GameController : MonoBehaviour
     {
         if (numeroDebolas == 15)
         {
-            numeroDebolas = 0;
-
-            var white = GetComponentInChildren<PhysicBall>();
-            white.finaldejogo = true;
-            
-            var childComponents = GetComponentsInChildren<NormalBall>();
-            foreach (var component in childComponents)
-            {
-                component.finaldejogo = true;
-            }
+            Reset();
         }
+    }
+
+    public void Reset()
+    {
+        numeroDebolas = 0;
+
+        var white = GetComponentInChildren<PhysicBall>();
+        white.finaldejogo = true;
+            
+        var childComponents = GetComponentsInChildren<NormalBall>();
+        foreach (var component in childComponents)
+        {
+            component.finaldejogo = true;
+        } 
     }
 }
